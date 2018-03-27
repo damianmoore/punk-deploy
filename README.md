@@ -26,6 +26,11 @@ cloud providers.
 
 ## Getting started
 
+Clone the project and `cd` into it.
+
+    git clone git@github.com:damianmoore/punk-deploy.git
+    cd punk-deploy/
+
 Copy the example settings file and modify it to suit your needs. You will need
 to fill in your access credentials for the cloud provider you wish to use if you
 want to try out the example.

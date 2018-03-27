@@ -7,7 +7,6 @@ import settings
 DRIVERS = {
     'digitalocean': {
         'regions': [
-            ('ams2', 'Amsterdam 2'),
             ('ams3', 'Amsterdam 3'),
         ],
         'sizes': [
