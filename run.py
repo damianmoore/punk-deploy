@@ -273,7 +273,7 @@ def main():
         {'selector': '1', 'prompt': 'View machines', 'return': view_machines_prompt},
         {'selector': '2', 'prompt': 'Create new machine', 'return': create_machine_prompt},
         {'selector': '3', 'prompt': 'Initialize machine', 'return': initialize_machine_prompt},
-        {'selector': '4', 'prompt': 'Build docker images', 'return': build_docker_images},
+        {'selector': '4', 'prompt': 'Build and push docker images', 'return': build_docker_images},
         {'selector': '5', 'prompt': 'Initialize/recreate docker containers', 'return': initialize_docker_containers},
         {'selector': '6', 'prompt': 'Sync volumes', 'return': sync_volumes},
         {'selector': '7', 'prompt': 'Sync databases from master to node', 'return': sync_databases_from_master},

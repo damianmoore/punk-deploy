@@ -30,18 +30,20 @@ def launch_docker_compose(machine_name, container=None):
         'DOCKER_CERT_PATH':     os.path.join(os.path.expanduser(settings.DOCKER_MACHINE_CONFIG_PATH), 'machines', machine_name),
     }
 
+    dc_bin = subprocess.check_output(['which', 'docker-compose'], env=env_vars).decode('utf-8').strip()
+
     if container:
         commands = [
-            ['docker-compose', 'pull', container],
-            ['docker-compose', '-f', file_path, 'kill', container],
-            ['docker-compose', '-f', file_path, 'rm', '-f', container],
-            ['docker-compose', '-f', file_path, 'up', '-d'],
+            [dc_bin, 'pull', container],
+            [dc_bin, '-f', file_path, 'kill', container],
+            [dc_bin, '-f', file_path, 'rm', '-f', container],
+            [dc_bin, '-f', file_path, 'up', '--remove-orphans', '-d'],
         ]
     else:
         commands = [
-            ['docker-compose', 'pull'],
-            ['docker-compose', '-f', file_path, 'down'],
-            ['docker-compose', '-f', file_path, 'up', '-d'],
+            [dc_bin, 'pull'],
+            [dc_bin, '-f', file_path, 'down'],
+            [dc_bin, '-f', file_path, 'up', '--remove-orphans', '-d'],
         ]
 
     for command in commands:

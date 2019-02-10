@@ -32,6 +32,7 @@ def build_image(image):
 
 def push_image(image):
     cmd = ['docker', 'push', '{}/{}'.format(settings.REGISTRY_ADDRESS, image)]
+    print(cmd)
     subprocess.check_output(cmd, stderr=subprocess.STDOUT).decode('utf-8')
 
 
