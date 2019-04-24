@@ -47,4 +47,5 @@ def launch_docker_compose(machine_name, container=None):
         ]
 
     for command in commands:
+        print(' '.join(command))
         subprocess.check_output(command, env=env_vars)
